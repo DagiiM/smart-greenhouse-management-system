@@ -10,30 +10,30 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body>
-        <div class="card min-h-screen sm:items-center py-4 sm:pt-0">
-          <div class="">
-            <div class="card-header">Welcome</div>
-            <p>{{config('app.name')}}</p>
-<div class="card-footer">
+    <body style="margin:15% 25% 0 25%;">
+
+        <div class="card text-center">
+    <div class="card-header">Welcome</div>
+  <div class="card-body">
+    <h5 class="card-title">{{config('app.name')}}</h5>
+    <p class="card-text"><i>IoT Device Monitoring, Provisioning System</i></p>
+  </div>
+  <div class="card-footer text-muted">
     @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+        <div class="">
             @auth
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                <a href="{{ route('login') }}" class="btn btn-primary text-sm text-gray-700 underline">Log in</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary ml-4 text-sm text-gray-700 underline">Register</a>
                 @endif
             @endauth
         </div>
     @endif
-</div>
-              </div>
+  </div>
 </div>
 
-            </div>
-        </div>
     </body>
 </html>

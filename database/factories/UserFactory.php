@@ -22,9 +22,21 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'firstname' => $this->faker->firstname,
+            'lastname' => $this->faker->lastname,
+            'mobile' => $this->faker->phoneNumber,
+            'email' => $this->faker->unique()->safeEmail,
+            'bio' => $this->faker->paragraph(1),
+            'address' => $this->faker->address,
+            'city' => $this->faker->city,
+            'cover_image' => $this->faker->randomElement(['cu1.jpeg','cu2.jpeg','cu3.jpeg','cu4.jpeg']),
+            'gender' => $this->faker->randomElement(['male', 'female']),
+            'country' => $this->faker->country,
+            'picture' => $this->faker->randomElement(['profile/default_male_image.jpg','profile/default_female_image.jpeg']),
+            'postal_code' => $this->faker->address,
+            'verified'=>$verified=$this->faker->randomElement([User::VERIFIED_USER,User::UNVERIFIED_USER]),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
