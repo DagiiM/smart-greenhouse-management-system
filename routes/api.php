@@ -18,10 +18,11 @@ use App\Http\Controllers\Temperature\TemperatureController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::resource('ph',PhController::class,['only'=>['store']])->middleware(['auth']);
-Route::resource('moisture',MoistureController::class,['only'=>['store']])->middleware(['auth']);
-Route::resource('humidity',HumidityController::class,['only'=>['store']])->middleware(['auth']);
-Route::resource('temperature',TemperatureController::class,['only'=>['store']])->middleware(['auth']);
+
+Route::resource('humidities',HumidityController::class,['only'=>['store']]);
+Route::resource('phs',PhController::class,['only'=>['store']]);
+Route::resource('temperatures',TemperatureController::class,['only'=>['store']]);
+Route::resource('moistures',MoistureController::class,['only'=>['store']]);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

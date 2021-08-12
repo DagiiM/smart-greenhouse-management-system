@@ -14,6 +14,7 @@ use App\Http\Controllers\Image\ImageController;
 use App\Http\Controllers\Social\SocialController;
 use App\Http\Controllers\System\SystemController;
 use App\Http\Controllers\Service\ServiceController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,9 +40,7 @@ Route::resource('images',ImageController::class)->middleware(['auth']);
 Route::resource('systems',SystemController::class,['only'=>['create','update','store','edit']])->middleware(['auth']);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

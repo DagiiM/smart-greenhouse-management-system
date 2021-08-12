@@ -18,7 +18,7 @@
                       <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                               Temperature (Hourly)</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">25 Deg</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{$temperature->value}} Deg</div>
                       </div>
                       <div class="col-auto">
       <svg version="1.1" height="30px" width="30px" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -98,7 +98,9 @@
                       <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                               Humidity (Hourly)</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">50%</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                {{$humidity->value}}%
+                            </div>
                       </div>
                       <div class="col-auto">
                         <svg version="1.1" id="Layer_1" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -159,7 +161,9 @@ C146.904,151.881,128.936,124.441,113.6,92.761z"/>
                       <div class="col mr-2">
                           <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                               PH Level</div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">6.0</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {{$ph->value}}
+                          </div>
                       </div>
                       <div class="col-auto">
                           <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -177,6 +181,23 @@ C146.904,151.881,128.936,124.441,113.6,92.761z"/>
                           <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                               Light Level</div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">6.0</div>
+                      </div>
+                      <div class="col-auto">
+                          <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+          <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                              Soil Moisture</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">{{$moisture->value}}%</div>
                       </div>
                       <div class="col-auto">
                           <i class="fas fa-comments fa-2x text-gray-300"></i>
